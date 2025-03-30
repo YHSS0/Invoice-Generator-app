@@ -36,12 +36,19 @@ This is a simple yet powerful **web-based invoice generator** built with Python,
 - Werkzeug (comes with Flask)
 ---
 invoice-generator/
-├── app.py                  # Flask backend logic
-├── templates/              # HTML templates
-│   ├── home.html           # Welcome/landing page
-│   └── form.html           # Invoice creation form
-├── uploads/                # Uploaded logo images
-├── invoices/               # Generated invoice PDFs
+├── app.py
+├── templates/
+│   ├── home.html
+│   └── form.html
+├── uploads/
+├── invoices/
+├── static/
+│   └── styles.css          # Optional
+├── README.md
+├── SECURITY.md             ✅ Security policy lives here
+├── requirements.txt
+├── .gitignore
+
 ---
 
 Let me know if you want a version with live links, images, or badges!
