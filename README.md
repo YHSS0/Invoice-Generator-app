@@ -35,6 +35,10 @@ This is a simple yet powerful **web-based invoice generator** built with Python,
 - ReportLab
 - Werkzeug (comes with Flask)
 
+
+---
+
+Let me know if you want a version with live links, images, or badges!
 ### Install dependencies:
 ```bash
 pip install flask reportlab
@@ -44,6 +48,4 @@ pip install flask reportlab
  Running the App
 python app.py
 
----
 
-Let me know if you want a version with live links, images, or badges!
