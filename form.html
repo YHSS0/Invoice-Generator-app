@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Invoice Generator</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<head>
+    <meta charset="UTF-3">
+    <title>Create Invoice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="text-center mb-2">Invoice Generator</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="invoice_title" class="form-label">Invoice Title / Number</label>
+            <input type="text" class="form-control" name="invoice_title" placeholder="e.g., Web Design Invoice #1054">
+        </div>
+
+        <div class="mb-3">
+            <label for="sender" class="form-label">Sender Info</label>
+            <textarea class="form-control" name="sender" rows="3" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="recipient" class="form-label">Recipient Info</label>
+            <textarea class="form-control" name="recipient" rows="3" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="address" class="form-label">Customer Address</label>
+            <textarea class="form-control" name="address" rows="2"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="due_date" class="form-label">Due Date</label>
+            <input type="date" class="form-control" name="due_date">
+        </div>
+
+
+
+        <div class="mb-3 ">
+            <label for="payment_method" class="form-label">Payment Method</label>
+            <input type="text" class="form-control" name="payment_method">
+        </div>
+
+         <div class="mb-3">
+            <label for="deposit" class="form-label">VAT</label>
+            <input type="number" step="%" class="form-control" name="deposit">
+        </div>
+
+
+        <div class="mb-3 ">
+            <label for="paid_status" class="form-label">Payment Status</label>
+            <select class="form-select" name="paid_status">
+                <option value="Paid in Full">Paid in Full</option>
+                <option value="Deposit Paid">Deposit Paid</option>
+                <option value="Unpaid">Unpaid</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="deposit" class="form-label">Deposit Amount</label>
+            <input type="number" step="0.01" class="form-control" name="deposit">
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="discount" class="form-label">Discount</label>
+            <input type="number" step="0.01" class="form-control" name="discount">
+        </div>
+
+        <h5>Invoice Items</h5>
+        <div id="items-container">
+            <div class="row g-2 mb-2 item-group">
+                <div class="col-md-5">
+                    <input type="text" name="description" class="form-control" placeholder="Description" required>
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="quantity" class="form-control" placeholder="Qty" min="1" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="number" step="0.01" name="price" class="form-control" placeholder="Unit Price" required>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary mb-3" onclick="addItem()">Add Another Item</button>
+
+        <div class="mb-3">
+            <label for="logo" class="form-label">Upload Logo (optional)</label>
+            <input type="file" class="form-control" name="logo" accept="image/*">
+        </div>
+
+        <div class="mb-3">
+            <label for="note" class="form-label form-control" aria-label="With textarea">Additional Note</label>
+            <textarea class="form-control" name="note" rows="3" placeholder="Optional note to include in the invoice..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generate PDF Invoice</button>
+    </form>
+</div>
+
+<script>
+    function addItem() {
+        const container = document.getElementById('items-container');
+        const div = document.createElement('div');
+        div.className = 'row g-2 mb-2 item-group';
+        div.innerHTML = `
+            <div class="col-md-5">
+                <input type="text" name="description" class="form-control" placeholder="Description" required>
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="quantity" class="form-control" placeholder="Qty" min="1" required>
+            </div>
+            <div class="col-md-3">
+                <input type="number" step="0.01" name="price" class="form-control" placeholder="Unit Price" required>
+            </div>`;
+        container.appendChild(div);
+    }
+</script>
+</body>
+</html>
