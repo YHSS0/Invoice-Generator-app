@@ -54,8 +54,8 @@ invoice-generator/
 Let me know if you want a version with live links, images, or badges!
 ### Install dependencies:
 ```bash
-pip install flask reportlab
-
+pip install flask 
+pip install reportlab
 ```
 
 Running the App:
