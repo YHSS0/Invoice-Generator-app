@@ -1,6 +1,6 @@
 # Invoice-Generator-app
 This easy-to-use web application allows you to create, customize, and export professional invoices in PDF format.
-# 🧾 Smart Invoice Generator (Flask + PDF)
+# 🧾  Invoice Generator (Flask + PDF)
 
 This is a simple yet powerful **web-based invoice generator** built with Python, Flask, and ReportLab. It allows businesses or freelancers to easily create and download professional invoices in PDF format.
 
